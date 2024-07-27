@@ -1,0 +1,33 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment directories
+.venv/
+env/
+venv/
+
+# Environment configuration files
+.env
+
+# Logs
+*.log
+
+# Cached files
+*.cache
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# MyPy cache
+.mypy_cache/
+
+# Python coverage reports
+.coverage
+coverage.xml
+*.cover
+
+# VS Code settings
+.vscode/
