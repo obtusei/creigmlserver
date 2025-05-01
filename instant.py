@@ -3,10 +3,12 @@ import pandas as pd
 import numpy as np
 import sqlite3
 
+#CONNECT WITH DB
 conn = sqlite3.connect('../creig-server-1/prisma/test.db')
 
+# FORMATING
 jobs = pd.read_sql('SELECT InstantJobs.*, JobType.name as category, Location.name as location FROM InstantJobs JOIN JobType ON InstantJobs.typeId = JobType.id JOIN Location ON InstantJobs.locationId = Location.id',conn)
-jobs.head()
+
 
 jobs["description"] = jobs["description"].apply(lambda x:x.split())
 

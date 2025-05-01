@@ -6,7 +6,7 @@ from nltk.stem.porter import PorterStemmer
 import sqlite3
 ps = PorterStemmer()
 
-conn = sqlite3.connect('./test.db')
+conn = sqlite3.connect('../creig-server-1/prisma/test.db')
 # jobs = pd.read_json("fulltime.json")
 jobs = pd.read_sql('SELECT FulltimeJob.*, JobType.name as category, Location.name as location FROM FulltimeJob JOIN JobType ON FulltimeJob.jobTypeId = JobType.id JOIN Location ON FulltimeJob.locationId = Location.id',conn)
 
@@ -68,7 +68,6 @@ def recommend(job):
 def for_you(user_history):
     # Dictionary to store aggregated recommendations
     aggregated_recommendations = {}
-    print(user_history)
 
     for job_id in user_history:
         recommended_jobs = recommend(job_id)
